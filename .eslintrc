@@ -1,0 +1,9 @@
+{
+  "extends": "airbnb",
+
+  "rules": {
+    "consistent-return": [1],
+    "strict": [0],
+    "max-len": ["warn", 200]
+  }
+}

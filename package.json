@@ -1,0 +1,35 @@
+{
+  "scripts": {
+    "eslint": "./node_modules/.bin/eslint --ignore-pattern '*test.js' ./",
+    "test": "npm run eslint && ./node_modules/.bin/mocha"
+  },
+  "devDependencies": {
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "mocha": "^3.2.0"
+  },
+  "name": "promise-chain-timeout-rejection",
+  "description": "Reject promise (and all following) if it takes more than a set duration",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://git@github.com/Precogs-com/promise-chain-timeout-rejection.git"
+  },
+  "keywords": [
+    "promise",
+    "chain",
+    "timeout",
+    "callback",
+    "lambda"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Precogs-com/promise-chain-timeout-rejection/issues"
+  },
+  "homepage": "https://github.com/Precogs-com/promise-chain-timeout-rejection#readme"
+}
