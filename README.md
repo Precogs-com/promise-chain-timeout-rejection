@@ -1,4 +1,4 @@
-# method timeout rejection
+# promise chain timeout rejection
 
 > Reject promise (and all following) if it takes more than a set duration
 
@@ -6,7 +6,7 @@
 
 Constructor defines a timeout in milliseconds.
 ```javascript
-const methodTimeout = require('method-timeout-rejection');
+const PromiseChainTimeoutRejection = require('promise-chain-timeout-rejection');
 
 const promiseTimeout = new PromiseChainTimeoutRejection(1000);
 ```
@@ -24,7 +24,7 @@ promiseTimeout.globalTimeoutRejection(() => {
   });
 })
 .catch((err) => {
-  assert(err instanceof methodTimeout.MethodTimeOutError);
+  assert(err instanceof PromiseChainTimeoutRejection.PromiseTimeOutError);
 });
 ```
 
