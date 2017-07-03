@@ -22,12 +22,24 @@ const PromiseChainTimeoutRejection = function PromiseChainTimeoutRejection(time)
 };
 
 PromiseChainTimeoutRejection.prototype.globalTimeoutRejection = function (promise) {
+  let timeout;
   return Promise.race([
-    new Promise((resolve, reject) => setTimeout(() => {
-      this.isExpired = true;
-      return reject(new PromiseTimeOutError(this.time));
-    }, this.time)),
-    promise(),
+    new Promise((resolve, reject) => {
+      timeout = setTimeout(() => {
+        this.isExpired = true;
+        return reject(new PromiseTimeOutError(this.time));
+      }, this.time);
+      return timeout;
+    }),
+    new Promise((resolve, reject) => promise()
+    .then((data) => {
+      clearTimeout(timeout);
+      return resolve(data);
+    })
+    .catch((err) => {
+      clearTimeout(timeout);
+      return reject(err);
+    })),
   ]);
 };
 

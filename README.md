@@ -60,3 +60,12 @@ promiseTimeout.globalTimeoutRejection(() => {
   }, 600);
 });
 ```
+
+### Lambda use case
+
+This package was created in order to handle lambda timeout. Lambda provides a `getRemainingTimeInMillis` method in the `context` object that gives the remaining time before lambda timeout.  
+So calling the constructor with that function allows to anticipate lambda timeout:
+
+```javascript
+const promiseTimeout = new PromiseChainTimeoutRejection(context.getRemainingTimeInMillis() - 500);
+```

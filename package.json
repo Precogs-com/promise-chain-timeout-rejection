@@ -13,7 +13,7 @@
   },
   "name": "promise-chain-timeout-rejection",
   "description": "Reject promise (and all following) if it takes more than a set duration",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "main": "index.js",
   "repository": {
     "type": "git",
